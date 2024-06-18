@@ -1,0 +1,103 @@
+[2024-06-18T08:30:01.556+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather.weather_data scheduled__2024-06-18T08:15:00+00:00 [queued]>
+[2024-06-18T08:30:01.560+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather.weather_data scheduled__2024-06-18T08:15:00+00:00 [queued]>
+[2024-06-18T08:30:01.560+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-06-18T08:30:01.565+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): weather_data> on 2024-06-18 08:15:00+00:00
+[2024-06-18T08:30:01.568+0000] {standard_task_runner.py:57} INFO - Started process 299 to run task
+[2024-06-18T08:30:01.570+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'weather', 'weather_data', 'scheduled__2024-06-18T08:15:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/kafka_stream.py', '--cfg-path', '/tmp/tmp_q8m46zh']
+[2024-06-18T08:30:01.571+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask weather_data
+[2024-06-18T08:30:01.615+0000] {task_command.py:415} INFO - Running <TaskInstance: weather.weather_data scheduled__2024-06-18T08:15:00+00:00 [running]> on host feb0d45f1e24
+[2024-06-18T08:30:01.672+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather' AIRFLOW_CTX_TASK_ID='weather_data' AIRFLOW_CTX_EXECUTION_DATE='2024-06-18T08:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-18T08:15:00+00:00'
+[2024-06-18T08:30:01.694+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=broker:29092 <connecting> [IPv4 ('192.168.160.8', 29092)]>: connecting to broker:29092 [('192.168.160.8', 29092) IPv4]
+[2024-06-18T08:30:01.694+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2024-06-18T08:30:01.695+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=broker:29092 <connecting> [IPv4 ('192.168.160.8', 29092)]>: Connection complete.
+[2024-06-18T08:30:01.797+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2024-06-18T08:30:01.798+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2024-06-18T08:30:01.800+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2024-06-18T08:30:01.802+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'next_ds' from the template is deprecated and will be removed in a future version. Please use '{{ data_interval_end | ds }}' instead.
+[2024-06-18T08:30:01.802+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8babf8c0 wrapping '2024-06-18' at 0xffff8baa9bf0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'next_ds', '2024-06-18')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.803+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'next_ds_nodash' from the template is deprecated and will be removed in a future version. Please use '{{ data_interval_end | ds_nodash }}' instead.
+[2024-06-18T08:30:01.803+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8bae2700 wrapping '20240618' at 0xffff8bb11bf0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'next_ds_nodash', '20240618')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.804+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'next_execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_end' instead.
+[2024-06-18T08:30:01.805+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'prev_ds' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.805+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8ba179c0 wrapping '2024-06-18' at 0xffff8baad9b0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'prev_ds', '2024-06-18')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.805+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'prev_ds_nodash' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.806+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8ba17c00 wrapping '20240618' at 0xffff8baad570 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'prev_ds_nodash', '20240618')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.806+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'prev_execution_date' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.807+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'prev_execution_date_success' from the template is deprecated and will be removed in a future version. Please use 'prev_data_interval_start_success' instead.
+[2024-06-18T08:30:01.807+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'tomorrow_ds' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.807+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8ba1af00 wrapping '2024-06-19' at 0xffff8bab7cb0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'tomorrow_ds', '2024-06-19')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.808+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'tomorrow_ds_nodash' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.808+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8ba1af80 wrapping '20240619' at 0xffff8bd3cf70 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'tomorrow_ds_nodash', '20240619')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.818+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'yesterday_ds' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.818+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8ba202c0 wrapping '2024-06-17' at 0xffff8bab7e30 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'yesterday_ds', '2024-06-17')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.819+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.9/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'yesterday_ds_nodash' from the template is deprecated and will be removed in a future version.
+[2024-06-18T08:30:01.819+0000] {secrets_masker.py:277} WARNING - Unable to redact <Proxy at 0xffff8ba20300 wrapping '20240617' at 0xffff8baa9cb0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'yesterday_ds_nodash', '20240617')>, please report this via <https://github.com/apache/***/issues>. Error was: TypeError: ObjectProxy() missing required argument 'wrapped' (pos 1)
+[2024-06-18T08:30:01.799+0000] {kafka_stream.py:62} INFO - {'conf': <airflow.configuration.AirflowConfigParser object at 0xffff9157e2e0>, 'dag': <DAG: weather>, 'dag_run': <DagRun weather @ 2024-06-18 08:15:00+00:00: scheduled__2024-06-18T08:15:00+00:00, state:running, queued_at: 2024-06-18 08:30:00.372608+00:00. externally triggered: False>, 'data_interval_end': DateTime(2024, 6, 18, 8, 30, 0, tzinfo=Timezone('UTC')), 'data_interval_start': DateTime(2024, 6, 18, 8, 15, 0, tzinfo=Timezone('UTC')), 'ds': '2024-06-18', 'ds_nodash': '20240618', 'execution_date': <Proxy at 0xffff8ba92ac0 wrapping DateTime(2024, 6, 18, 8, 15, 0, tzinfo=Timezone('UTC')) at 0xffff8bb079f0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'execution_date', DateTime(2024, 6, 18, 8, 15, 0, tzinfo=Timezone('UTC')))>, 'expanded_ti_count': None, 'inlets': [], 'logical_date': DateTime(2024, 6, 18, 8, 15, 0, tzinfo=Timezone('UTC')), 'macros': <module 'airflow.macros' from '/home/airflow/.local/lib/python3.9/site-packages/airflow/macros/__init__.py'>, 'next_ds': <Proxy at 0xffff8babf8c0 wrapping '2024-06-18' at 0xffff8baa9bf0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'next_ds', '2024-06-18')>, 'next_ds_nodash': <Proxy at 0xffff8bae2700 wrapping '20240618' at 0xffff8bb11bf0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'next_ds_nodash', '20240618')>, 'next_execution_date': <Proxy at 0xffff8bae24c0 wrapping DateTime(2024, 6, 18, 8, 30, 0, tzinfo=Timezone('UTC')) at 0xffff8bd3adb0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'next_execution_date', DateTime(2024, 6, 18, 8, 30, 0, tzinfo=Timezone('UTC')))>, 'outlets': [], 'params': {}, 'prev_data_interval_start_success': DateTime(2024, 6, 18, 7, 15, 0, tzinfo=Timezone('UTC')), 'prev_data_interval_end_success': DateTime(2024, 6, 18, 7, 30, 0, tzinfo=Timezone('UTC')), 'prev_ds': <Proxy at 0xffff8ba179c0 wrapping '2024-06-18' at 0xffff8baad9b0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'prev_ds', '2024-06-18')>, 'prev_ds_nodash': <Proxy at 0xffff8ba17c00 wrapping '20240618' at 0xffff8baad570 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'prev_ds_nodash', '20240618')>, 'prev_execution_date': <Proxy at 0xffff8ba1a780 wrapping DateTime(2024, 6, 18, 8, 0, 0, tzinfo=Timezone('UTC')) at 0xffff8baaa450 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'prev_execution_date', DateTime(2024, 6, 18, 8, 0, 0, tzinfo=Timezone('UTC')))>, 'prev_execution_date_success': <Proxy at 0xffff8ba1ae40 wrapping DateTime(2024, 6, 18, 7, 15, 0, tzinfo=Timezone('UTC')) at 0xffff8bab32c0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'prev_execution_date_success', DateTime(2024, 6, 18, 7, 15, 0, tzinfo=Timezone('UTC')))>, 'prev_start_date_success': DateTime(2024, 6, 18, 7, 30, 0, 829605, tzinfo=Timezone('UTC')), 'run_id': 'scheduled__2024-06-18T08:15:00+00:00', 'task': <Task(PythonOperator): weather_data>, 'task_instance': <TaskInstance: weather.weather_data scheduled__2024-06-18T08:15:00+00:00 [running]>, 'task_instance_key_str': 'weather__weather_data__20240618', 'test_mode': False, 'ti': <TaskInstance: weather.weather_data scheduled__2024-06-18T08:15:00+00:00 [running]>, 'tomorrow_ds': <Proxy at 0xffff8ba1af00 wrapping '2024-06-19' at 0xffff8bab7cb0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'tomorrow_ds', '2024-06-19')>, 'tomorrow_ds_nodash': <Proxy at 0xffff8ba1af80 wrapping '20240619' at 0xffff8bd3cf70 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'tomorrow_ds_nodash', '20240619')>, 'triggering_dataset_events': {}, 'ts': '2024-06-18T08:15:00+00:00', 'ts_nodash': '20240618T081500', 'ts_nodash_with_tz': '20240618T081500+0000', 'var': {'json': None, 'value': None}, 'conn': None, 'yesterday_ds': <Proxy at 0xffff8ba202c0 wrapping '2024-06-17' at 0xffff8bab7e30 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'yesterday_ds', '2024-06-17')>, 'yesterday_ds_nodash': <Proxy at 0xffff8ba20300 wrapping '20240617' at 0xffff8baa9cb0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0xffff8bad3c10>, 'yesterday_ds_nodash', '20240617')>, 'apikey': '***', 'locations': ['Mumbai', 'Pune', 'Surat', 'Kolkata', 'Jammu', 'Bikaner', 'Indore', 'Chennai', 'Bengaluru', 'Ludhiana'], 'days': 2, 'templates_dict': None}
+[2024-06-18T08:31:17.012+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0xffff8b010640>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.9/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.weatherapi.com', port=80): Max retries exceeded with url: /v1/forecast.json?key=c04cb134e91f45e29c880259241406&q=Mumbai&days=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff8b010640>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/kafka_stream.py", line 69, in stream_data
+    res = get_data(apikey, location, days)
+  File "/opt/airflow/dags/kafka_stream.py", line 15, in get_data
+    req = requests.get(url, params=payload)
+  File "/home/airflow/.local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.weatherapi.com', port=80): Max retries exceeded with url: /v1/forecast.json?key=c04cb134e91f45e29c880259241406&q=Mumbai&days=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff8b010640>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2024-06-18T08:31:17.046+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=weather, task_id=weather_data, execution_date=20240618T081500, start_date=20240618T083001, end_date=20240618T083117
+[2024-06-18T08:31:17.067+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 9 for task weather_data (HTTPConnectionPool(host='api.weatherapi.com', port=80): Max retries exceeded with url: /v1/forecast.json?key=c04cb134e91f45e29c880259241406&q=Mumbai&days=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff8b010640>: Failed to establish a new connection: [Errno 111] Connection refused')); 299)
+[2024-06-18T08:31:17.120+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-06-18T08:31:17.137+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
