@@ -3,3 +3,5 @@ venv/
 .venv/
 tmp/
 .tmp/
+logs/
+.logs/
