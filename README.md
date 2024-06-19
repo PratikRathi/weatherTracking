@@ -17,10 +17,16 @@ cd weatherTracking
 3) Download the requirements.txt packages: <br />
 pip install requirements.txt
 
-4) Run Docker Compose to spin up the services: <br />
+4) Download the required JAR files and move them into the jars folder: <br />
+spark-sql-kafka-0-10_2.12-3.4.1.jar <br />
+spark-token-provider-kafka-0-10_2.12-3.4.1.jar <br />
+kafka-clients-3.4.1.jar <br />
+commons-pool2-2.11.1.jar
+
+5) Run Docker Compose to spin up the services: <br />
 docker-compose up
 
-5) Run the spark_stream python file: <br />
+6) Run the spark_stream python file: <br />
 python3 spark_stream.py
 
 
