@@ -1,5 +1,6 @@
 **Project System Design Architecture**
-![Project Architecture](Architecture Diagram.png?)
+
+![Project Architecture](https://github.com/PratikRathi/weatherTracking/blob/main/Architecture%20Diagram.png)
 
 **The project is designed with the following components:**
 
@@ -33,6 +34,7 @@ docker-compose up
 python3 spark_stream.py
 
 **Dashboarding**
-![Tableau Weather Visualization](Weather Reporting Tableau.png?)
+
+![Tableau Weather Visualization](https://github.com/PratikRathi/weatherTracking/blob/main/Weather%20Reporting%20Tableau.png)
 
 
