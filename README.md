@@ -2,6 +2,15 @@
 
 ![Project Architecture](https://github.com/PratikRathi/weatherTracking/blob/main/Architecture%20Diagram.png)
 
+**Project Description**
+To process the data in real-time, we will be using Apache Kafka and Spark Streaming. 
+Kafka will act as a messaging system to stream the data from the IoT sensors to Spark Streaming. 
+
+Spark Streaming will process the data in real-time, perform analytics on the data, and output the results to Cassandra.
+
+To visualize and analyze the data, we will be using Tableau. 
+Tableau will connect to Cassandra and generate interactive visualizations to help us gain insights into the weather patterns and trends.
+
 **The project is designed with the following components:**
 
 * Data Source: We use weatherapi.com API to generate realtime weather data for our pipeline. <br />
@@ -39,6 +48,7 @@ python3 spark_stream.py
 
 **Reference**
 
-Same architecture with different usecase [YouTube Video Tutorial](https://www.youtube.com/watch?v=GqAcTrqKcrY).
+Same architecture with different usecase [YouTube Video Tutorial](https://www.youtube.com/watch?v=GqAcTrqKcrY). <br />
+https://github.com/HelloSongi/Spark-Structured-streaming-IoT-Weather-Sensors/blob/main/README.md
 
 
