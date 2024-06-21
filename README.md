@@ -37,4 +37,8 @@ python3 spark_stream.py
 
 ![Tableau Weather Visualization](https://github.com/PratikRathi/weatherTracking/blob/main/Weather%20Reporting%20Tableau.png)
 
+**Reference**
+
+Same architecture with different usecase [YouTube Video Tutorial](https://www.youtube.com/watch?v=GqAcTrqKcrY).
+
 
