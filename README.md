@@ -1,4 +1,4 @@
-**Project System Design Architecture**
+**Project Architecture**
 
 ![Project Architecture](https://github.com/PratikRathi/weatherTracking/blob/main/Architecture%20Diagram.png)
 
