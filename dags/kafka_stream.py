@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
@@ -28,17 +28,18 @@ def format_data(res):
     data["country"] = location["country"]
     data["lat"] = location["lat"]
     data["lon"] = location["lon"]
-    data["time"] = current["last_updated"]
+    data["datetime"] = str(datetime.strptime(current["last_updated"], '%Y-%m-%d %H:%M'))
+    data["time"] = current["last_updated"].split(" ")[-1]
     data["temp_degree_celcius"] = current["temp_c"]
     data["weather"] = current["condition"]["text"]
-    data["weather_icon"] = current["condition"]["icon"]
+    data["weather_icon"] = 'https:' + current["condition"]["icon"]
     data["wind_kph"] = current["wind_kph"]
     data["precip_mm"] = current["precip_mm"]
 
     for day in forecast:
         date = day['date']
-        current_date = datetime.today().strftime('%Y-%m-%d')
-        if current_date!=date:
+        current_date = (datetime.today()+ timedelta(days=1)).strftime('%Y-%m-%d')
+        if current_date==date:
             data["forecast_date"] = date
             tomorrow = day["day"]
             data["forecast_max_temp"] = tomorrow["maxtemp_c"]
@@ -47,12 +48,12 @@ def format_data(res):
             data["forecast_max_wind"] = tomorrow["maxwind_kph"]
             data["forecast_rain"] = tomorrow["daily_chance_of_rain"]
             data["forecast_weather"] = tomorrow["condition"]["text"]
-            data["forecast_weather_icon"] = tomorrow["condition"]["icon"]
+            data["forecast_weather_icon"] = 'https:' + tomorrow["condition"]["icon"]
             break
 
     return data
 
-def stream_data(*op_args, **op_kwargs):
+def stream_data(*args, **op_kwargs):
     import json
     from kafka import KafkaProducer
     import logging
@@ -68,6 +69,7 @@ def stream_data(*op_args, **op_kwargs):
     for location in locations:
         res = get_data(apikey, location, days)
         res = format_data(res)
+        print(res)
 
         producer.send('weather_data', json.dumps(res).encode('utf-8'))
 
@@ -85,6 +87,9 @@ with DAG(
                    'locations': ['Mumbai', 'Pune', 'Surat', 'Kolkata', 'Jammu', 'Bikaner', 'Indore', 'Chennai', 'Bengaluru', 'Ludhiana'],
                    'days': 2}
     )
+
+
+
 
 
 

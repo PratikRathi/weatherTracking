@@ -1,3 +1,6 @@
+**Project System Design Architecture**
+![Project Architecture](Architecture Diagram.png?)
+
 **The project is designed with the following components:**
 
 * Data Source: We use weatherapi.com API to generate realtime weather data for our pipeline. <br />
@@ -29,5 +32,7 @@ docker-compose up
 6) Run the spark_stream python file: <br />
 python3 spark_stream.py
 
+**Dashboarding**
+![Tableau Weather Visualization](Weather Reporting Tableau.png?)
 
 

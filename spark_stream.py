@@ -40,6 +40,7 @@ def get_structured_df(df):
         StructField('country', StringType(), False),
         StructField('lat', StringType(), False),
         StructField('lon', StringType(), False),
+        StructField('datetime', StringType(), False),
         StructField('time', StringType(), False),
         StructField('temp_degree_celcius', StringType(), False),
         StructField('weather', StringType(), False),

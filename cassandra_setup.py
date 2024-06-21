@@ -17,6 +17,7 @@ def create_table(session):
             country TEXT,
             lat TEXT,
             lon TEXT,
+            datetime TEXT,
             time TEXT,
             temp_degree_celcius TEXT,
             weather TEXT,
@@ -31,7 +32,7 @@ def create_table(session):
             forecast_rain TEXT,
             forecast_weather TEXT,
             forecast_weather_icon TEXT,
-            PRIMARY KEY (name, time)
+            PRIMARY KEY (name, datetime)
         );
     """)
 
