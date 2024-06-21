@@ -49,7 +49,7 @@ python3 spark_stream.py
 
 **Reference**
 
-Same architecture with different usecase [YouTube Video Tutorial](https://www.youtube.com/watch?v=GqAcTrqKcrY). <br />
-https://github.com/HelloSongi/Spark-Structured-streaming-IoT-Weather-Sensors/blob/main/README.md
+* Same architecture with different usecase [YouTube Video Tutorial](https://www.youtube.com/watch?v=GqAcTrqKcrY). <br />
+* https://github.com/HelloSongi/Spark-Structured-streaming-IoT-Weather-Sensors/blob/main/README.md
 
 
